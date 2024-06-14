@@ -14,8 +14,10 @@ const Country = document.getElementById("Country");
 const City = document.getElementById("City");
 const cool = document.getElementById("cool");
 const myloader = document.getElementById("loader");
-const CountryCity = document.getElementById("Country");
+const CountryCity = document.getElementById("CountryCity");
 
+const firstoption = document.getElementById("firstoption");
+const firstoptionCountry = document.getElementById("firstoptionCountry");
 function selectcreateCountry(coun)
 {
     console.log(coun);
@@ -34,7 +36,7 @@ function selectcreateCity(city)
     console.log(city);
     const sortedList = city.data.sort((a, b) =>
         a.localeCompare(b));
-    city.data.forEach(c => {
+    sortedList.forEach(c => {
         var option = document.createElement("option");
         option.value = String(c).replace("/ /gi","&nbsp");;
         option.text = c;
@@ -43,9 +45,12 @@ function selectcreateCity(city)
 }
 
 function testCounty(event) {
+    CountryCity.innerText = event.target.value;
+
     City.innerHTML ="";
-    cool.innerHTML = ""; // Clear previous results
     
+    cool.innerHTML = ""; // Clear previous results
+
     var eventValue =String(event.target.value).replace("/ /gi", "%20");
     console.log(eventValue);
     fetch(("https://countriesnow.space/api/v0.1/countries/cities/q?country=")+eventValue).then(response=>{
@@ -56,8 +61,10 @@ function testCounty(event) {
             selectcreateCity(res);
         }).catch(error=>{
             console.log("error");
-        }).finally(()=>{
             
+        }).finally(()=>{
+            City.insertBefore(firstoption, City.firstChild);
+            firstoption.selected = true;
         });
 }
 
@@ -65,6 +72,7 @@ function testCity(event) {
     cool.innerHTML = ""; // Clear previous results
     myloader.style.visibility = "visible";
     var eventValue =String(event.target.value);
+    CountryCity.innerText = Country.value + " - "+eventValue;
     console.log(eventValue +" "+ String(Country.value).replace("/ /gi","&nbsp"));
     fetch(("https://nominatim.openstreetmap.org/search.php?city="+eventValue+"&country="+Country.value+"&format=jsonv2")).then(response=>{
         return response.json();
@@ -73,6 +81,7 @@ function testCity(event) {
                 console.log(res[0].lon);
             } else {
                 console.log("No results found");
+                CountryCity.innerText = "error"
             }
             fetch(("https://www.7timer.info/bin/astro.php?lon="+res[0].lon+"&lat="+res[0].lat+"&ac=0&unit=metric&output=json&tzshift=0")).then(response=>{
                 return response.json();
@@ -83,9 +92,16 @@ function testCity(event) {
                     console.log("error");
                 }).finally(()=>{
                     myloader.style.visibility = "hidden";
-                });
+
+                    City.insertBefore(firstoption, City.firstChild);
+                    firstoption.selected = true;
+
+                    Country.insertBefore(firstoptionCountry, Country.firstChild);
+                    firstoptionCountry.selected = true;
+                }); 
         }).catch(error=>{
             console.log("error");
+            CountryCity.innerText = "error";
         })
 }
 
@@ -139,6 +155,7 @@ function createWeather(weather)
 
         cool.appendChild(ho);
     });
+    
 }
 
 function getCloudCover(w)

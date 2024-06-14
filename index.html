@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="top">
+        <h1>Countries</h1>
+        <select onchange="testCounty(event)" id="Country">
+            <option  value="" selected disabled locked selected>pick a Country</option>
+        </select>
+        <h1>Cities</h1>
+        <select onchange="testCity(event)" id="City">
+            <option  value="" selected disabled locked selected>pick a City</option>
+        </select>
+    </div>
+    <h1 id="CountryCity"></h1>
+    <div id="cool">
+    </div>
+    <script src="code.js"></script>
+</body>
+</html>

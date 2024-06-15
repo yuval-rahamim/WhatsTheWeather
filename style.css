@@ -57,8 +57,12 @@ img{
     h1{
         font-size: x-large;
     }
+   
 }
 
+#CountryCity{
+    font-size: 5vh;
+}
 
 #ho{
     border: 2px solid white;

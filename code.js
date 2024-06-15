@@ -101,7 +101,8 @@ function testCity(event) {
                 }); 
         }).catch(error=>{
             console.log("error");
-            CountryCity.innerText = "error";
+            myloader.style.visibility = "hidden";
+            CountryCity.innerText = "error - try other country/city";
         })
 }
 
@@ -179,57 +180,5 @@ function getCloudCover(w)
             return 94;
         case 9:
             return 100;
-    }
-}
-
-function getLifted_index(w)
-{
-    switch(w.lifted_index){
-        case -10:
-
-            break;
-        case -6:
-            
-            break;
-        case -4:
-
-            break;
-        case -1:
-            
-            break;
-        case 2:
-
-            break;
-        case 6:
-            
-            break;
-        case 10:
-
-            break;
-        case 15:
-            
-            break;
-    }
-}
-
-
-function getPrec_type(w)
-{
-    switch(w.prec_type){
-        case "snow":
-
-            break;
-        case "rain":
-            
-            break;
-        case "frzr":
-
-            break;
-        case "icep":
-            
-            break;
-        case "none":
-
-            break;
     }
 }

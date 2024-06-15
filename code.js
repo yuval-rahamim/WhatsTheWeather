@@ -156,7 +156,7 @@ function createWeather(weather) {
         var weatherPhoto = document.createElement("img");
         if (prec_type == "rain") {
             weatherPhoto.src = "src/downpour-rainy-day-16531.png";
-        } else if (prec_type == "Snow") {
+        } else if (prec_type == "snow") {
             weatherPhoto.src = "src/snowfall-and-blue-cloud-16541.png";
         } else if (prec_type == "none") {
             if (cloudCover < 20) {

@@ -13,7 +13,7 @@ Visit the [What's the Weather](https://yuv-weather.netlify.app/) website and sel
 - [Nominatim API](https://nominatim.openstreetmap.org/search.php): Used for geocoding to fetch latitude and longitude coordinates for cities.
 - [7Timer Astro API](https://www.7timer.info/bin/astro.php): Provides weather forecast data including temperature, wind, precipitation, etc.
 
-##How It Works
+## How It Works
 
 - Country Selection: Upon selecting a country, the application fetches cities available in that country using the Countries API.
 

@@ -19,15 +19,22 @@ select{
 
 img{
     position: relative;
-    width: 80%;
-    
-    border-bottom-left-radius: 40%;
-    border-bottom-right-radius: 40%;
+    width: 50%;
+    height: 30%;
 }
 
+#background{
+  position: fixed;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 #cool{
-    background-color: black;
+    background-color: rgba(92, 122, 151, 0.712);
     border-radius: 5px;
     display: flex;
     flex-direction: row;
@@ -47,18 +54,31 @@ img{
 }
 
 @media screen and (max-width: 1000px) {
-    #cool > * {
-        width: calc(25% - 30px); /* Adjusted width for 4 items per row on smaller screens */
-    }
-    select{
-        width: 110px;
-        height: 40px;
-    }
-    h1{
-        font-size: x-large;
-    }
-   
+  .glitch {
+      transform: translate(-60vw, 0px); /* Move back by 50% of its own width and height */
+  }
+  #cool > * {
+      width: calc(25% - 30px); /* Adjusted width for 4 items per row on smaller screens */
+  }
+  select {
+      width: 100px;
+      height: 40px;
+  }
+  h1 {
+      font-size: large;
+      text-align: center;
+  }
+  #CountryCity {
+      font-size: medium;
+  }
+  h3 {
+      font-size: 1vw;
+  }
+  h2 {
+      font-size: 3vw;
+  }
 }
+
 
 #CountryCity{
     font-size: 5vh;
@@ -68,7 +88,7 @@ img{
     border: 2px solid white;
     border-radius: 10px;
     display: flex;
-    gap: 10px;
+    gap: 5px;
     flex-direction: column;
     align-items:center ;
     height:min-content;
@@ -90,100 +110,85 @@ h2 {
     margin-bottom: 10px;
 }
 
-
-
 .glitch {
-    position:absolute;
-    top: 50%;
-    left: 45%;
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #fff;
-    letter-spacing: 5px;
-    z-index: 1;
-    animation: shift 1s ease-in-out infinite alternate;
-  }
-  
-  .glitch:before,
-  .glitch:after {
-    display: block;
-    content: attr(data-glitch);
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.8;
-  }
-  
-  .glitch:before {
-    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-    color: #8b00ff;
-    z-index: -1;
-  }
-  
-  .glitch:after {
-    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
-    color: #00e571;
-    z-index: -2;
-  }
-  
-  @keyframes glitch {
-    0% {
+  position: fixed; /* Position fixed to keep it centered relative to the viewport */
+  top: 50%; /* Start at 50% from the top */
+  left: 45%; /* Start at 45% from the left */
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: 5px;
+  z-index: 1;
+  animation: shift 1s ease-in-out infinite alternate;
+}
+
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch:before {
+  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #8b00ff;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  color: #00e571;
+  z-index: -2;
+}
+
+@keyframes glitch {
+  0% {
       transform: translate(0);
-    }
-  
-    20% {
+  }
+  20% {
       transform: translate(-3px, 3px);
-    }
-  
-    40% {
+  }
+  40% {
       transform: translate(-3px, -3px);
-    }
-  
-    60% {
+  }
+  60% {
       transform: translate(3px, 3px);
-    }
-  
-    80% {
+  }
+  80% {
       transform: translate(3px, -3px);
-    }
-  
-    to {
+  }
+  100% {
       transform: translate(0);
-    }
   }
-  
-  @keyframes shift {
-    0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100% {
+}
+
+@keyframes shift {
+  0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100% {
       transform: skewX(0deg);
-    }
-  
-    41% {
-      transform: skewX(10deg);
-    }
-  
-    42% {
-      transform: skewX(-10deg);
-    }
-  
-    59% {
-      transform: skewX(40deg) skewY(10deg);
-    }
-  
-    60% {
-      transform: skewX(-40deg) skewY(-10deg);
-    }
-  
-    63% {
-      transform: skewX(10deg) skewY(-5deg);
-    }
-  
-    70% {
-      transform: skewX(-50deg) skewY(-20deg);
-    }
-  
-    71% {
-      transform: skewX(10deg) skewY(-10deg);
-    }
   }
-  
+  41% {
+      transform: skewX(10deg);
+  }
+  42% {
+      transform: skewX(-10deg);
+  }
+  59% {
+      transform: skewX(40deg) skewY(10deg);
+  }
+  60% {
+      transform: skewX(-40deg) skewY(-10deg);
+  }
+  63% {
+      transform: skewX(10deg) skewY(-5deg);
+  }
+  70% {
+      transform: skewX(-50deg) skewY(-20deg);
+  }
+  71% {
+      transform: skewX(10deg) skewY(-10deg);
+  }
+}

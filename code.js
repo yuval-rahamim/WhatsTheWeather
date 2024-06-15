@@ -13,6 +13,8 @@ fetch("https://countriesnow.space/api/v0.1/countries/info?returns=flag")
     });
 
 // Elements from the HTML DOM
+const snow = document.getElementById("snow"); // Select the dropdown for countries
+
 const Country = document.getElementById("Country"); // Select the dropdown for countries
 const City = document.getElementById("City"); // Select the dropdown for cities
 const cool = document.getElementById("cool"); // Select the container for weather information
@@ -21,6 +23,19 @@ const CountryCity = document.getElementById("CountryCity"); // Select the elemen
 
 const firstoption = document.getElementById("firstoption"); // Select the first option for cities dropdown
 const firstoptionCountry = document.getElementById("firstoptionCountry"); // Select the first option for countries dropdown
+
+//snowing
+var isSnowing = false;
+
+function snowing(){
+    if(isSnowing){
+        snow.style.visibility = "hidden";
+        isSnowing = false;
+    }else{
+        snow.style.visibility = "visible";
+        isSnowing = true;
+    }
+}
 
 // Function to populate the country dropdown list
 function selectcreateCountry(coun) {

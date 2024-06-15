@@ -53,34 +53,11 @@ img{
     width: calc(12.5% - 30px); /* Default width for 8 items per row */
 }
 
-@media screen and (max-width: 1000px) {
-  .glitch {
-      transform: translate(-60vw, 0px); /* Move back by 50% of its own width and height */
-  }
-  #cool > * {
-      width: calc(25% - 30px); /* Adjusted width for 4 items per row on smaller screens */
-  }
-  select {
-      width: 100px;
-      height: 40px;
-  }
-  h1 {
-      font-size: large;
-      text-align: center;
-  }
-  #CountryCity {
-      font-size: medium;
-  }
-  h3 {
-      font-size: 1vw;
-  }
-  h2 {
-      font-size: 3vw;
-  }
-}
+
 
 
 #CountryCity{
+  margin-top: 5px;
     font-size: 5vh;
 }
 
@@ -211,16 +188,6 @@ h2 {
   }
 }
 
-@keyframes astronaut {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .box-of-star1,
 .box-of-star2,
 .box-of-star3,
@@ -231,7 +198,8 @@ h2 {
   left: 0;
   top: 0;
   transform: translateY(0px);
-  height: 700px;
+  height: 200px;
+  overflow: hidden;
 }
 
 .box-of-star1 {
@@ -319,4 +287,37 @@ h2 {
 .star-position7 {
   top: 30px;
   left: 1480px;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .glitch {
+      transform: translate(-60vw, 0px); /* Move back by 50% of its own width and height */
+  }
+  #cool > * {
+      width: calc(25% - 30px); /* Adjusted width for 4 items per row on smaller screens */
+  }
+  select {
+      width: 100px;
+      height: 40px;
+  }
+  h1 {
+      font-size: large;
+      text-align: center;
+  }
+  #CountryCity {
+      font-size: larger;
+  }
+  h3 {
+      font-size: 2vw;
+  }
+  h2 {
+      font-size: 3.5vw;
+  }
+  #snowqu{
+    visibility: hidden;
+  }
+  #snow{
+    display: none;
+  }
 }

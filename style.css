@@ -58,7 +58,9 @@ img{
 
 #CountryCity{
   margin-top: 5px;
-    font-size: 5vh;
+  font-size: 4vh;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #ho{
@@ -199,7 +201,7 @@ h2 {
   top: 0;
   transform: translateY(0px);
   height:200px;
-  overflow: hidden;
+  overflow:hidden;
 }
 
 .box-of-star1 {

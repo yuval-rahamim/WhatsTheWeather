@@ -323,5 +323,6 @@ h2 {
   }
   #snow{
     display: none;
+    visibility: hidden;
   }
 }

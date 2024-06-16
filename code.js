@@ -29,10 +29,10 @@ var isSnowing = false;
 
 function snowing(){
     if(isSnowing){
-        snow.style.visibility = "hidden";
+        snow.style.display = "none";
         isSnowing = false;
     }else{
-        snow.style.visibility = "visible";
+        snow.style.display = "block";
         isSnowing = true;
     }
 }

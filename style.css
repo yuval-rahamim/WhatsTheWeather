@@ -177,7 +177,7 @@ h2 {
 @keyframes snow {
   0% {
     opacity: 0;
-    transform: translateY(0px);
+    transform: translateY(-100px); /* Start above the container */
   }
 
   20% {
@@ -186,9 +186,10 @@ h2 {
 
   100% {
     opacity: 1;
-    transform: translateY(650px);
+    transform: translateY(500px); /* Move slightly beyond the container */
   }
 }
+
 
 .box-of-star1,
 .box-of-star2,

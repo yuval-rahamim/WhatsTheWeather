@@ -134,14 +134,7 @@ function testCity(event) {
                 .finally(() => {
                     myloader.style.visibility = "hidden"; // Hide loader after fetching data
 
-                    // Insert a default option at the beginning of the City dropdown
-                    City.innerHTML ="";
-                    City.insertBefore(firstoption, City.firstChild);
                     firstoption.selected = true; // Select the default option in the City dropdown
-
-                    // Insert a default option at the beginning of the Country dropdown
-                    Country.insertBefore(firstoptionCountry, Country.firstChild);
-                    firstoptionCountry.selected = true; // Select the default option in the Country dropdown
                 });
         })
         .catch(error => {

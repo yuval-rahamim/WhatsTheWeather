@@ -296,7 +296,7 @@ h2 {
 
 @media screen and (max-width: 1000px) {
   .glitch {
-      transform: translate(-60vw, 0px); /* Move back by 50% of its own width and height */
+      left: 30%;
   }
   #cool > * {
       width: calc(25% - 30px); /* Adjusted width for 4 items per row on smaller screens */

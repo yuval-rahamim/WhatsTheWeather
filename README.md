@@ -24,3 +24,5 @@ Visit the [What's the Weather](https://yuv-weather.netlify.app/) website and sel
 - Display: The weather data is parsed and displayed dynamically on the web page, including icons representing weather conditions.
 
 - Error Handling: If no results are found for the selected city or if there's an error in fetching data, appropriate error messages are displayed to the user.
+
+![image](https://github.com/user-attachments/assets/be70a62d-bc94-4d5c-9d35-6a711d96e030)
